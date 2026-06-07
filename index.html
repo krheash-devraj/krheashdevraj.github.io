@@ -250,7 +250,6 @@
     <li><a href="#theatre">Theatre</a></li>
     <li><a href="#voice">Voice</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#videos">Videos</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -509,7 +508,7 @@
 <section id="contact">
   <div class="section-wrap">
     <div class="section-header reveal">
-      <span class="section-num">09</span>
+      <span class="section-num">08</span>
       <h2 class="section-title">Get in Touch</h2>
       <div class="section-line"></div>
     </div>
@@ -533,63 +532,29 @@
 </footer>
 
 <script>
+
 // ══════════════════════════════════════════════════════════
-//  GOOGLE DRIVE IMAGE CONFIG
-//  ─────────────────────────────────────────────────────────
-//  HOW TO ADD A PHOTO:
-//  1. Upload photo to the correct Drive subfolder
-//  2. Right-click → Share → Anyone with the link → Viewer
-//  3. Copy the File ID from the link:
-//     drive.google.com/file/d/  ← FILE_ID →  /view
-//  4. Add { id: 'FILE_ID', label: 'Description' } below
-//
-//  HOW TO REMOVE A PHOTO:
-//  Delete or comment out its line below.
+//  GITHUB ASSET CONFIG
 // ══════════════════════════════════════════════════════════
 
-// Drive folder: Headshots (1oBHz5X1YHp7ZRrQzDgzIYTcghwnOFORX)
-// Also used for the hero slideshow
 const HEADSHOTS = [
-  { id: '1q-GFAUhQhkgU3JOi9_gKojEvZ6OJBqZj, label: 'Headshot' },
-  { id: '1gIzOk16l1tuMpefMRAIBKrv-uGIllpWn', label: 'Headshot' },
-  { id: '1gpWbMhnmPwEn3YmAb8O-nKYpxmRAfUAb', label: 'Headshot' },
-  { id: '1XyW-oc_EqwpC1poB_bpFBE3ui8jD7Z5p', label: 'Headshot' },
-  { id: '19KzI01Ql37P8QI1XCaxd0fLms1zd7tcU', label: 'Headshot' },
-  { id: '1_fWuln7iUaPZPYJj99aUwT89vAl58oVt', label: 'Headshot' },
-  { id: '1pl-CiC6F6m46pB4fH_jn70xIUuu7m3Xz', label: 'Headshot' },
-  { id: '1ChbbfkWfMdmAlfPo-da3OyQ9XFpzoXuJ', label: 'Headshot' },
-  { id: '1fePl5_qDBqJrzxAMzOw9vyPjaP_YxZ90', label: 'Headshot' },
-  { id: '1O8bKMDlCi0IfVsx5GQp1v65RT09fl4c_', label: 'Headshot' },
+  { src:'assets/gallery/headshots/headshot-01.jpg', label:'Headshot' },
+  { src:'assets/gallery/headshots/headshot-02.jpg', label:'Headshot' },
+  { src:'assets/gallery/headshots/headshot-03.jpg', label:'Headshot' }
 ];
 
-// Drive folder: Character Looks (13p5Gurx2CwAZWGQwG8iU2uyWDSb9ukdx)
 const CHARACTER_LOOKS = [
-  { id: '1PRiRq0rxvHjHpBuV0p0PcwFNqf1c3ncY', label: 'Character Look' },
-  { id: '1j5OqPdz8E3ufqNFX1BZWbweP3qN7mGF_', label: 'Character Look' },
-  { id: '1o1EGzASAVFHh73IYnVSG7ObJf78glPGZ', label: 'Character Look' },
-  { id: '1Qwx8EdqL4jcEce4aMts2Xx23h9fgluig', label: 'Character Look' },
-  { id: '10xdAk9MJ5NGKWCaSeJT1j022EXhHkxHD', label: 'Character Look' },
-  { id: '1nxg6PwAYsbDGQ7_ypZQlIFip-8kGCWxe', label: 'Character Look' },
-  { id: '1CUD_MiploAOQGvWWZVR86ReR-21uLQyB', label: 'Character Look' },
+  { src:'assets/gallery/character-looks/look-01.jpg', label:'Character Look' }
 ];
 
-// Drive folder: Full Length (1QwkudpBZ_brLkl3mzxnO3s4ztRpHzeQE)
 const FULL_LENGTH = [
-  { id: '1XtoeyFEGOEqOGV8iQyq-mSI48b8Q7Cny', label: 'Full Length' },
-  { id: '1jKOBtJ_0xWFqaZrpgr-FRpheHV_FUvtI', label: 'Full Length' },
+  { src:'assets/gallery/full-length/full-01.jpg', label:'Full Length' }
 ];
 
-// ── ADD IDs BELOW WHEN YOU UPLOAD TO THESE FOLDERS ───────
-// Drive folder: Behind the Scenes (1pfgdWgo6c_9A6VXv9tc3_h6FgVDnSIbb)
 const BEHIND_SCENES = [];
-
-// Drive folder: Candid Photos (1WdKSlkEj7VtQOckD14uxnTSbyGalzfIz)
 const CANDID = [];
-
-// Drive folder: Posters (1Ucu7Btmdud9ZNgnAekGczciYnkkK3YhI)
 const POSTERS = [];
 
-// ── COMBINED DATA ─────────────────────────────────────────
 const ALL_PHOTOS = [
   ...HEADSHOTS.map(i => ({ ...i, cat: 'headshot' })),
   ...CHARACTER_LOOKS.map(i => ({ ...i, cat: 'character' })),
@@ -599,9 +564,10 @@ const ALL_PHOTOS = [
   ...POSTERS.map(i => ({ ...i, cat: 'poster' })),
 ];
 
-function driveUrl(id) {
-  // Use Drive thumbnail API — works reliably for publicly shared files
-  return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
+function driveUrl(src) {
+  return src;
+}
+&sz=w1000`;
 }
 
 // ══════════════════════════════════════════════════════════
@@ -619,7 +585,7 @@ function buildSlideshow() {
     const slide = document.createElement('div');
     slide.className = 'slide' + (i === 0 ? ' active' : '');
     const img = document.createElement('img');
-    img.src = driveUrl(h.id);
+    img.src = driveUrl(h.src);
     img.alt = 'Krheash DevRaj';
     img.onerror = () => {
       slide.style.display = 'none';
@@ -669,7 +635,7 @@ function renderGallery() {
   lbItems = items;
   grid.innerHTML = items.map((p, i) => `
     <div class="gallery-item" onclick="lbOpen(${i})">
-      <img src="${driveUrl(p.id)}" alt="${p.label}" loading="lazy"
+      <img src="${driveUrl(p.src)}" alt="${p.label}" loading="lazy"
            onerror="this.closest('.gallery-item').style.display='none'">
       <div class="gi-overlay"><span class="gi-label">${p.label}</span></div>
     </div>`).join('');
@@ -696,7 +662,7 @@ function lbOpen(idx) {
 
 function lbShow() {
   const p = lbItems[lbIdx];
-  document.getElementById('lbImg').src = driveUrl(p.id);
+  document.getElementById('lbImg').src = driveUrl(p.src);
   document.getElementById('lbCaption').textContent = p.label;
   document.getElementById('lbCounter').textContent = `${lbIdx + 1} / ${lbItems.length}`;
 }
