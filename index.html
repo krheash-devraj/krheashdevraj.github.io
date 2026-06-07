@@ -609,9 +609,8 @@ function buildSlideshow() {
     img.src = driveUrl(h.src);
     img.alt = 'Krheash DevRaj';
     img.onerror = () => {
-      slide.style.display = 'none';
-      if (i === 0) document.getElementById('heroFallback').style.display = 'flex';
-    };
+  slide.remove();
+};
     slide.appendChild(img);
     ss.appendChild(slide);
 
@@ -624,17 +623,32 @@ function buildSlideshow() {
   if (HEADSHOTS.length > 1) setInterval(() => goToSlide(currentSlide + 1), 4500);
 }
 
-function goToSlide(n) {
-  const slides = document.querySelectorAll('.slide');
-  const dots   = document.querySelectorAll('.slide-dot');
-  if (!slides.length) return;
-  slides[currentSlide].classList.remove('active');
-  dots[currentSlide].classList.remove('active');
-  currentSlide = (n + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
-  dots[currentSlide].classList.add('active');
-}
+document.addEventListener('mouseover', e => {
+  if (
+    e.target.closest(
+      'a,.project-card,.lang-pill,.gfilter,.gallery-item,.slide-dot,.contact-card'
+    )
+  ) {
+    cur.style.width='20px';
+    cur.style.height='20px';
+    ring.style.width='60px';
+    ring.style.height='60px';
+  }
+});
 
+document.addEventListener('mouseout', e => {
+  if (
+    e.target.closest(
+      'a,.project-card,.lang-pill,.gfilter,.gallery-item,.slide-dot,.contact-card'
+    )
+  ) {
+    cur.style.width='12px';
+    cur.style.height='12px';
+    ring.style.width='36px';
+    ring.style.height='36px';
+  }
+});
+  
 buildSlideshow();
 
 // ══════════════════════════════════════════════════════════
