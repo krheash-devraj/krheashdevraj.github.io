@@ -486,8 +486,10 @@
       <div class="section-line"></div>
     </div>
     <div class="drive-note reveal">
-      <span>Photos synced from Google Drive — add images to your Drive folders to update this gallery instantly</span>
-      <a href="https://drive.google.com/drive/folders/1zSj0_hvSY2HpnXKOMAl0J47loXCqDfhH" target="_blank">Open Drive ↗</a>
+      <span>Photos hosted on GitHub Pages</span>
+  <a href="https://github.com/krheash-devraj/krheash-devraj.github.io" target="_blank">
+    View Repository ↗
+  </a>
     </div>
     <div class="gallery-filters reveal">
       <button class="gfilter active" onclick="filterGallery('all',this)">All</button>
@@ -538,22 +540,40 @@
 // ══════════════════════════════════════════════════════════
 
 const HEADSHOTS = [
-  { src:'assets/gallery/headshots/headshot-01.jpg', label:'Headshot' },
-  { src:'assets/gallery/headshots/headshot-02.jpg', label:'Headshot' },
-  { src:'assets/gallery/headshots/headshot-03.jpg', label:'Headshot' }
+  { src:"assets/gallery/salt&pepper/saltpepper-01.jpg", label:"Salt & Pepper" },
+  { src:"assets/gallery/salt&pepper/saltpepper-02.jpg", label:"Salt & Pepper" },
+  { src:"assets/gallery/salt&pepper/saltpepper-03.jpg", label:"Salt & Pepper" },
+  { src:"assets/gallery/salt&pepper/saltpepper-04.jpg", label:"Salt & Pepper" },
+  { src:"assets/gallery/salt&pepper/saltpepper-05.jpg", label:"Salt & Pepper" }
 ];
 
 const CHARACTER_LOOKS = [
-  { src:'assets/gallery/character-looks/look-01.jpg', label:'Character Look' }
+  { src:"assets/gallery/character-looks/character-01.jpg", label:"Character Look" },
+  { src:"assets/gallery/character-looks/character-02.jpg", label:"Character Look" },
+  { src:"assets/gallery/character-looks/character-03.jpg", label:"Character Look" },
+  { src:"assets/gallery/character-looks/character-04.jpg", label:"Character Look" }
 ];
 
 const FULL_LENGTH = [
-  { src:'assets/gallery/full-length/full-01.jpg', label:'Full Length' }
+  { src:"assets/gallery/full-length/full-01.jpg", label:"Full Length" },
+  { src:"assets/gallery/full-length/full-02.jpg", label:"Full Length" },
+  { src:"assets/gallery/full-length/full-03.jpg", label:"Full Length" }
 ];
 
-const BEHIND_SCENES = [];
-const CANDID = [];
-const POSTERS = [];
+const BEHIND_SCENES = [
+  { src:"assets/gallery/bts/bts-01.jpg", label:"Behind The Scenes" },
+  { src:"assets/gallery/bts/bts-02.jpg", label:"Behind The Scenes" }
+];
+
+const CANDID = [
+  { src:"assets/gallery/candid/candid-01.jpg", label:"Candid" },
+  { src:"assets/gallery/candid/candid-02.jpg", label:"Candid" }
+];
+
+const POSTERS = [
+  { src:"assets/gallery/posters/poster-01.jpg", label:"Poster" },
+  { src:"assets/gallery/posters/poster-02.jpg", label:"Poster" }
+];
 
 const ALL_PHOTOS = [
   ...HEADSHOTS.map(i => ({ ...i, cat: 'headshot' })),
