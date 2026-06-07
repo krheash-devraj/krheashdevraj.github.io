@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Krheash DevRaj — Actor · Writer · Voice Artist</title>
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -260,7 +263,9 @@
   <div class="hero-left">
     <p class="hero-eyebrow">Actor · Writer · Voice-Over Artist</p>
     <h1 class="hero-name">K<span>R</span>HEASH<br>DEV<span>R</span>AJ</h1>
-    <p class="hero-tagline">Salt &amp; Pepper | 5′ 9″ | Playing Age 35–45</p>
+    <p class="hero-tagline">
+Actor • Writer • Voice Artist • Playing Age 35–45
+</p>
     <div class="hero-stats">
       <div class="stat-item"><div class="stat-value">8+</div><div class="stat-label">Theatre Years</div></div>
       <div class="stat-item"><div class="stat-value">15+</div><div class="stat-label">Projects</div></div>
@@ -539,12 +544,11 @@
 //  GITHUB ASSET CONFIG
 // ══════════════════════════════════════════════════════════
 
+
+
 const HEADSHOTS = [
-  { src:"assets/gallery/salt&pepper/saltpepper-01.jpg", label:"Salt & Pepper" },
-  { src:"assets/gallery/salt&pepper/saltpepper-02.jpg", label:"Salt & Pepper" },
-  { src:"assets/gallery/salt&pepper/saltpepper-03.jpg", label:"Salt & Pepper" },
-  { src:"assets/gallery/salt&pepper/saltpepper-04.jpg", label:"Salt & Pepper" },
-  { src:"assets/gallery/salt&pepper/saltpepper-05.jpg", label:"Salt & Pepper" }
+  { src:"assets/gallery/headshots/headshot-01.jpg", label:"Head Shots" },
+  { src:"assets/gallery/headshots/headshot-02.jpg", label:"Head Shots" },
 ];
 
 const CHARACTER_LOOKS = [
@@ -645,7 +649,10 @@ function renderGallery() {
   const items = activeFilter === 'all' ? ALL_PHOTOS : ALL_PHOTOS.filter(p => p.cat === activeFilter);
 
   if (!items.length) {
-    grid.innerHTML = `<div class="gallery-empty">No photos in this category yet.<br>Add images to your Google Drive folder to populate this section.</div>`;
+    grid.innerHTML = `
+<div class="gallery-empty">
+No photos available in this category yet.
+</div>`;
     return;
   }
 
